@@ -1,0 +1,34 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "jest",
+    "jest-formatting"
+  ],
+  "extends": [
+    "airbnb-base",
+    "eslint:recommended",
+    "plugin:jest-formatting/strict",
+    "plugin:jest/recommended",
+    "plugin:jest/style",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "env": {
+    "node": true,
+    "jest/globals": true
+  },
+  "rules": {
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "class-methods-use-this": "off",
+    "no-param-reassign": "off",
+    "no-shadow": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-shadow": 1
+  }
+}

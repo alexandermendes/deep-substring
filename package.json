@@ -1,0 +1,59 @@
+{
+  "name": "deep-substring",
+  "version": "1.0.0",
+  "description": "A utility function for creating substrings for all values of an object.",
+  "author": "Alex Mendes",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -d",
+    "prebuild": "rimraf dist",
+    "test": "jest",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandermendes/deep-substring.git"
+  },
+  "homepage": "https://github.com/alexandermendes/deep-substring#readme",
+  "bugs": {
+    "url": "https://github.com/alexandermendes/deep-substring/issues"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "keywords": [
+    "string",
+    "substring",
+    "utilities"
+  ],
+  "devDependencies": {
+    "@commitlint/config-conventional": "^16.0.0",
+    "@jest/types": "^29.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^16.11.26",
+    "@types/rimraf": "^3.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.11.0",
+    "@typescript-eslint/parser": "^5.11.0",
+    "commitlint": "^8.3.5",
+    "eslint": "^8.8.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.0.0",
+    "eslint-plugin-jest-formatting": "^3.1.0",
+    "husky": "^4.2.5",
+    "jest": "^27.5.1",
+    "semantic-release": "^19.0.2",
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.5"
+  }
+}
