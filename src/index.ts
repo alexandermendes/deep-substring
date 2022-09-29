@@ -15,7 +15,8 @@ const subString = (
   let iteratedString = '';
 
   return value
-    .split(separator).reduce((joinedString, stringPart) => {
+    .split(separator)
+    .reduce((joinedString, stringPart) => {
       const shouldStart = iteratedString.length >= start;
 
       if (iteratedString) {
@@ -42,26 +43,31 @@ const subString = (
     }, '').substring(0, end);
 };
 
-export const deepSubstring = (
-  value: any,
+export const deepSubstring = <T>(
+  value: T,
   start: number,
   end: number,
   options?: DeepSubstringOptions,
-): any => {
+): T => {
   if (typeof value === 'string') {
-    return subString(value, start, end, options);
+    return subString(value, start, end, options) as unknown as T;
   }
 
   if (Array.isArray(value)) {
-    return value.map((arrValue) => deepSubstring(arrValue, start, end, options));
+    return value.map(
+      (arrValue) => deepSubstring(arrValue, start, end, options) as unknown as T,
+    ) as unknown as T;
   }
 
   if (typeof value === 'object') {
-    return Object.entries(value).reduce((acc, [key, objValue]) => ({
-      ...acc,
-      [key]: deepSubstring(objValue, start, end, options),
-    }), {});
+    return Object.entries(value).reduce(
+      (acc, [key, objValue]) => ({
+        ...acc,
+        [key]: deepSubstring(objValue, start, end, options) as unknown as T,
+      }),
+      {},
+    ) as unknown as T;
   }
 
-  return value;
+  return value as unknown as T;
 };
