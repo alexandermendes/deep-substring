@@ -1,6 +1,6 @@
 {
   "name": "deep-substring",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A utility function for creating substrings for all values of an object.",
   "author": "Alex Mendes",
   "license": "ISC",
